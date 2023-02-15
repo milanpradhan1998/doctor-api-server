@@ -6,6 +6,7 @@ const order = require("../Controller/order-Controller");
 const filterData = require("../Controller/filter-Controller");
 const catagoriesList = require("../Controller/catagories-Controller");
 const payment = require("../Controller/payment-Controller");
+const Search = require("../Controller/search-Controller");
 const router = express.Router();
 
 // my 1st home api
@@ -26,6 +27,8 @@ router.post("/api/orders-save", order.saveOrders);
 router.post("/api/orders-details", order.getOrderDetails);
 // filter by post method
 router.post("/api/filter-data", filterData.getfilterData);
+//Search control
+router.post("/api/getSearchData", Search.getSearchResult);
 // payment controller
 router.post("/api/gen-order-id-payment", payment.genOrderId);
 router.post("/api/verify-payment", payment.verifyPayment);
